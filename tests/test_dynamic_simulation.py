@@ -12,12 +12,12 @@ class DynamicSimulationTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.nt = 1e25
-        r = 3e-6
+        r = 5.5e-6
         cls.fiber = YbDopedFiber(length=0.1, core_radius=r, core_na=0.12, ion_number_density=cls.nt)
-        cls.pump_power = 0.5
-        cls.signal_power = 0.1
-        cls.signal_wl = 1040e-9
-        cls.pump_wl = 980e-9
+        cls.pump_power = 20
+        cls.signal_power = 10
+        cls.signal_wl = 1553e-9
+        cls.pump_wl = 940e-9
         cls.time_steps = 50000
         cls.z_nodes = 150
         cls.steady_state_dt = 1e-5

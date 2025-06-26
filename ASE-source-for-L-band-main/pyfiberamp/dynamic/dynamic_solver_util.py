@@ -39,7 +39,7 @@ class dPdZ:
     def __init__(self, channel_params):
         self.a_g_per_Nt = (channel_params.a + channel_params.g) / channel_params.ion_number_densities
         self.a_l = channel_params.a + channel_params.l
-        m = NUMBER_OF_ASE_POLARIZATION_MODES
+        m = NUMBER_OF_MODES_IN_SINGLE_MODE_FIBER
         self.g_m_h_v_dv_per_Nt = m * h * channel_params.g * channel_params.v * channel_params.dv / channel_params.ion_number_densities
         self.n_channels = channel_params.n_channels
         self.num_ion_populations = channel_params.ion_number_densities.shape[0] // self.n_channels
@@ -84,4 +84,4 @@ def shift_against_propagation_direction_to_from(dest_arr, source_arr, n_forward)
 
 def shift_to_propagation_direction_to_from(dest_arr, source_arr, n_forward):
     dest_arr[:n_forward, 1:] = source_arr[:n_forward, :-1]
-    dest_arr[n_forward:, :-1] = source_arr[n_forward:, 1:]  
+    dest_arr[n_forward:, :-1] = source_arr[n_forward:, 1:]
